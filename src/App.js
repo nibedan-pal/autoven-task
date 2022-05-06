@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/productScreen";
 import CategoriesScreen from "./screens/CategoriesScreen";
-import OrderScreen from "./screens/OrderScreen";
+import EvfleetdashboardScreen from "./screens/EvfleetdashboardScreen";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
           <Route path="/" component={HomeScreen} exact />
           <Route path="/products" component={ProductScreen} />
           <Route path="/category" component={CategoriesScreen} />
-          <Route path="/orders" component={OrderScreen} />
+          <Route path="/evfleetdashboard" component={EvfleetdashboardScreen} />
       
         </Switch>
       </Router>

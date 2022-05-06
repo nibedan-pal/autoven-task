@@ -7,14 +7,26 @@ const HomeScreen = () => {
     <>
       <Sidebar />
       <main className="main-wrap">
-      
         <Header />
-        <NavLink
-                activeClassName="active "
-                to="/orders"
-              >
-                <button className="text col-lg-4 col-md-6 me-auto ">View Dashboard</button>
-              </NavLink>
+        <h3 style={{ padding: "15px" }}>EV Fleet Dashboard </h3>
+        <br></br>
+        <NavLink activeClassName="active " to="/evfleetdashboard">
+          <div style={{ padding: "15px" }}>
+            {" "}
+            <button
+              style={{
+                color: "black",
+                backgroundColor: "#0d9bdd",
+                border: "#0d9bdd",
+                height: "40px",
+                width: "245px",
+                
+              }}
+            >
+              Vehicle Dashboard
+            </button>
+          </div>
+        </NavLink>
       </main>
     </>
   );

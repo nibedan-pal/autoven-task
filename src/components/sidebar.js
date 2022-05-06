@@ -51,17 +51,17 @@ const Sidebar = () => {
                 to="/category"
               >
                 <i className="icon fas fa-list"></i>
-                <span className="text">Categories</span>
+                <span className="text">Vehicles</span>
               </NavLink>
             </li>
             <li className="menu-item">
               <NavLink
                 activeClassName="active"
                 className="menu-link"
-                to="/orders"
+                to="/evfleetdashboard"
               >
                 <i className="icon fas fa-bags-shopping"></i>
-                <span className="text">Orders</span>
+                <span className="text">EV Fleet Menu </span>
               </NavLink>
             </li>
             
