@@ -1,48 +1,195 @@
 import React from "react";
-import Orders from "./Orders";
 
-const OrderMain = () => {
-  return (
-    <section className="content-main">
-      <div className="content-header">
-        <h2 className="content-title">Orders</h2>
-      </div>
+//Bootstrap and jQuery libraries
+import "jquery/dist/jquery.min.js";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-      <div className="card mb-4 shadow-sm">
-        <header className="card-header bg-white">
-          <div className="row gx-3 py-3">
-            <div className="col-lg-4 col-md-6 me-auto">
-              <input
-                type="text"
-                placeholder="Search..."
-                className="form-control p-2"
-              />
+//Datatable Modules
+import "datatables.net-dt/js/dataTables.dataTables";
+import "datatables.net-dt/css/jquery.dataTables.min.css";
+import $ from "jquery";
+
+class OrderMain extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      tabledata: [
+        {
+          vehicleid: "AYXGHJH",
+          date: "2021-09-20",
+          reason :"XYZ Reason"
+        },
+        {
+          vehicleid: "AYXGHJH",
+          date: "2021-09-20",
+          reason :"XYZ Reason"
+        },
+        {
+          vehicleid: "AYXGHJH",
+          date: "2021-09-20",
+          reason :"XYZ Reason"
+        },
+        {
+          vehicleid: "AYXGHJH",
+          date: "2021-09-20",
+          reason :"XYZ Reason"
+        },{
+          vehicleid: "AYXGHJH",
+          date: "2021-09-20",
+          reason :"XYZ Reason"
+        },{
+          vehicleid: "AYXGHJH",
+          date: "2021-09-20",
+          reason :"XYZ Reason"
+        },{
+          vehicleid: "AYXGHJH",
+          date: "2021-09-20",
+          reason :"XYZ Reason"
+        },{
+          vehicleid: "AYXGHJH",
+          date: "2021-09-20",
+          reason :"XYZ Reason"
+        },{
+          vehicleid: "AYXGHJH",
+          date: "2021-09-20",
+          reason :"XYZ Reason"
+        },{
+          vehicleid: "AYXGHJH",
+          date: "2021-09-20",
+          reason :"XYZ Reason"
+        },{
+          vehicleid: "AYXGHJH",
+          date: "2021-09-20",
+          reason :"XYZ Reason"
+        },{
+          vehicleid: "AYXGHJH",
+          date: "2021-09-20",
+          reason :"XYZ Reason"
+        },{
+          vehicleid: "AYXGHJH",
+          date: "2021-09-20",
+          reason :"XYZ Reason"
+        },{
+          vehicleid: "AYXGHJH",
+          date: "2021-09-20",
+          reason :"XYZ Reason"
+        },{
+          vehicleid: "AYXGHJH",
+          date: "2021-09-20",
+          reason :"XYZ Reason"
+        },{
+          vehicleid: "AYXGHJH",
+          date: "2021-09-20",
+          reason :"XYZ Reason"
+        },{
+          vehicleid: "AYXGHJH",
+          date: "2021-09-20",
+          reason :"XYZ Reason"
+        },{
+          vehicleid: "AYXGHJH",
+          date: "2021-09-20",
+          reason :"XYZ Reason"
+        },{
+          vehicleid: "AYXGHJH",
+          date: "2021-09-20",
+          reason :"XYZ Reason"
+        },{
+          vehicleid: "AYXGHJH",
+          date: "2021-09-20",
+          reason :"XYZ Reason"
+        },{
+          vehicleid: "AYXGHJH",
+          date: "2021-09-20",
+          reason :"XYZ Reason"
+        },{
+          vehicleid: "AYXGHJH",
+          date: "2021-09-20",
+          reason :"XYZ Reason"
+        }
+
+      ],
+    };
+  }
+
+  componentDidMount() {
+    //initialize datatable
+    $(document).ready(function () {
+      $("#example").DataTable();
+    });
+
+    //datepicker on change
+    $(".dateadded").on("change", function (ret) {
+      var v = ret.target.value; // getting search input value
+
+      $("#example").DataTable().columns(3).search(v).draw();
+    });
+  }
+  render() {
+    //Datatable HTML
+
+    return (
+      <section className="content-main">
+        <div className="content-header">
+          <h2 className="content-title">Details</h2>
+        </div>
+
+        <div className="card mb-4 shadow-sm">
+          <header className="card-header bg-white">
+            <div className="row gx-3 py-3">
+              <div className="col-lg-4 col-md-6 me-auto">
+                <input
+                  type="text"
+                  placeholder="Vehicle ID"
+                  className="form-control p-2"
+                />
+              </div>
+              <div className="col-lg-4 col-md-8 me-auto ">
+                <button>Add Vehicle</button>
+              </div>
+
             </div>
-            <div className="col-lg-2 col-6 col-md-3">
-              <select className="form-select">
-                <option>Status</option>
-                <option>Active</option>
-                <option>Disabled</option>
-                <option>Show all</option>
-              </select>
-            </div>
-            <div className="col-lg-2 col-6 col-md-3">
-              <select className="form-select">
-                <option>Show 20</option>
-                <option>Show 30</option>
-                <option>Show 40</option>
-              </select>
-            </div>
-          </div>
-        </header>
-        <div className="card-body">
-          <div className="table-responsive">
-            <Orders />
+          </header>
+          <div className="card-body">
+            <div className="table-responsive"></div>
           </div>
         </div>
-      </div>
-    </section>
-  );
-};
+        <div className="card mb-4 shadow-sm">
+          <div class="col-sm-3 mb-4">
+            <div class="form-group">
+              <label for="sel1" class="form-label">
+                Date Filter:
+              </label>
+              <input
+                class="form-control"
+                type="date"
+                class="dateadded form-control"
+              />
+            </div>
+          </div>
+          <table id="example" class="display">
+            <thead>
+              <tr>
+                <th>Vehicle ID</th>
+                <th>Date </th>
+                <th>Reason </th>
+              </tr>
+            </thead>
+            <tbody>
+              {this.state.tabledata.map((result) => {
+                return (
+                  <tr class="table-success">
+                    <td>{result.vehicleid}</td>
+                    <td>{result.date}</td>
+                    <td>{result.reason}</td>
 
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    );
+  }
+}
 export default OrderMain;

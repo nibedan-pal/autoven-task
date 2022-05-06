@@ -11,7 +11,6 @@ const Sidebar = () => {
               src="/images/logo.png"
               style={{ height: "46" }}
               className="logo"
-              alt="Ecommerce dashboard template"
             />
           </Link>
           <div>
@@ -44,16 +43,7 @@ const Sidebar = () => {
                 <span className="text">Products</span>
               </NavLink>
             </li>
-            <li className="menu-item">
-              <NavLink
-                activeClassName="active"
-                className="menu-link"
-                to="/addproduct"
-              >
-                <i className="icon fas fa-cart-plus"></i>
-                <span className="text">Add product</span>
-              </NavLink>
-            </li>
+           
             <li className="menu-item">
               <NavLink
                 activeClassName="active"
@@ -74,37 +64,8 @@ const Sidebar = () => {
                 <span className="text">Orders</span>
               </NavLink>
             </li>
-            <li className="menu-item">
-              <NavLink
-                activeClassName="active"
-                className="menu-link"
-                to="/users"
-              >
-                <i className="icon fas fa-user"></i>
-                <span className="text">Users</span>
-              </NavLink>
-            </li>
-            <li className="menu-item">
-              <NavLink
-                activeClassName="active"
-                className="menu-link disabled"
-                to="/sellers"
-              >
-                <i className="icon fas fa-store-alt"></i>
-                <span className="text">Sellers</span>
-              </NavLink>
-            </li>
-
-            <li className="menu-item">
-              <NavLink
-                activeClassName="active"
-                className="menu-link disabled"
-                to="/transaction"
-              >
-                <i className="icon fas fa-usd-circle"></i>
-                <span className="text">Transactions</span>
-              </NavLink>
-            </li>
+            
+            
           </ul>
           <br />
           <br />

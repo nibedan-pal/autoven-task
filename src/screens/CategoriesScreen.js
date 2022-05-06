@@ -1,7 +1,6 @@
 import React from "react";
 import Sidebar from "./../components/sidebar";
 import Header from "./../components/Header";
-import MainCategories from "./../components/Categories/MainCategories";
 
 const CategoriesScreen = () => {
   return (
@@ -9,7 +8,6 @@ const CategoriesScreen = () => {
       <Sidebar />
       <main className="main-wrap">
         <Header />
-        <MainCategories />
       </main>
     </>
   );
